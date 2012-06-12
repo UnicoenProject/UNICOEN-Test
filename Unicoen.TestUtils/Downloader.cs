@@ -1,6 +1,6 @@
 ﻿#region License
 
-// Copyright (C) 2011 The Unicoen Project
+// Copyright (C) 2011-2012 The Unicoen Project
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,23 +20,23 @@ using System.IO;
 using System.Net;
 
 namespace Unicoen.TestUtils {
-    public static class Downloader {
-        public static void Download(string url, string outPath) {
-            using (var client = new WebClient()) {
-                using (var stream = client.OpenRead(url)) {
-                    using (var file = new FileStream(outPath, FileMode.Create)) {
-                        var buff = new byte[64 * 1024];
-                        int len;
-                        while ((len = stream.Read(buff, 0, buff.Length)) > 0) {
-                            file.Write(buff, 0, len);
-                        }
-                    }
-                }
-            }
-        }
+	public static class Downloader {
+		public static void Download(string url, string outPath) {
+			using (var client = new WebClient()) {
+				using (var stream = client.OpenRead(url)) {
+					using (var file = new FileStream(outPath, FileMode.Create)) {
+						var buff = new byte[64 * 1024];
+						int len;
+						while ((len = stream.Read(buff, 0, buff.Length)) > 0) {
+							file.Write(buff, 0, len);
+						}
+					}
+				}
+			}
+		}
 
-        public static Stream GetStream(string url) {
-            return new WebClient().OpenRead(url);
-        }
-    }
+		public static Stream GetStream(string url) {
+			return new WebClient().OpenRead(url);
+		}
+	}
 }
