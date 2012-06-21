@@ -1,4 +1,4 @@
-﻿package pkg.subpkg.subsubpkg.subsubsubpkg;
+package pkg.subpkg.subsubpkg.subsubsubpkg;
 
 class Cls{
 	class Inner{
