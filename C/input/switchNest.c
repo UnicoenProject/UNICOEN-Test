@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+	int a = 0, i = 1, j = 2;
 	switch(i) {
 		case 0: {
 		label: a = 0;
